@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "name":"logan",
+        "model":"renault",
+        "years":2018,
+        "price":6500000
+
+    },
+    {
+        "id":2,
+        "name":"priora",
+        "model":"lada",
+        "years":2012,
+        "price":850000
+
+    }
+]
