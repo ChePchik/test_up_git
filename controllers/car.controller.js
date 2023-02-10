@@ -21,15 +21,17 @@ const postCar = (req, res) => {
 		years,
 		price,
 	};
+
 	try {
-		const ress = postCarDB(dataCar);
+		let ress = postCarDB(dataCar);
 		if (!ress) res.status(400).json("Ошибка создания");
-		res.status(200).json(res);
+		res.status(200).json(ress);
 	} catch (error) {
 		console.log(error);
 		res.status(400).json(error);
 	}
 };
+
 const updateCar = (req, res) => {
 	const id = req.params.id;
 	const { name, model, years, price } = req.body;
