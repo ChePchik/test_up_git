@@ -1,18 +1,5 @@
 [
-    {
-        "id":1,
-        "name":"logan",
-        "model":"renault",
-        "years":2018,
-        "price":6500000
-
-    },
-    {
-        "id":2,
-        "name":"priora",
-        "model":"lada",
-        "years":2012,
-        "price":850000
-
-    }
+	{ "id": 1, "name": "logan", "model": "renault", "years": 2018, "price": 6500000 },
+	{ "id": 2, "name": "priora", "model": "lada", "years": 2012, "price": 850000 },
+	{ "name": " tolik", "model": "lambargini", "years": "1988", "price": "100000" }
 ]

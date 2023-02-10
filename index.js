@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const http = require("http");
+const morgan = require("morgan");
 const routerCar = require("./routes/car.route");
 
 const app = express();
@@ -9,6 +10,7 @@ const server = http.createServer(app);
 
 const port = process.env.PORT || 3003;
 
+app.use(morgan("dev"));
 app.use(express.json());
 // Работа с форматом json
 app.use(express.urlencoded({ extended: true }));
@@ -16,10 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // подключаем статичные файлы
 app.use((err, request, response, next) => {
-  // middleware - промежуточный обработчик
-  console.log(err);
-  response.status(500).send("server crash");
-  next();
+	// middleware - промежуточный обработчик
+	console.log(err);
+	response.status(500).send("server crash");
+	next();
 });
 app.use("/api/car", routerCar);
 
@@ -28,8 +30,8 @@ app.use("/api/car", routerCar);
 // });
 
 server.listen(port, () => {
-  // говорим серверу отслеживать порт и запускаем сервер
-  console.log(`Server running on port http://localhost:${port}`);
+	// говорим серверу отслеживать порт и запускаем сервер
+	console.log(`Server running on port http://localhost:${port}`);
 });
 
 module.exports = app;
